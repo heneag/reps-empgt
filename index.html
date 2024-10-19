@@ -75,7 +75,7 @@
 
 
 <body>
-<H1>RESPUESTAS RAPIDAS EL MEJOR PRECIO GT</H1>>
+<H1>RESPUESTAS RAPIDAS EL MEJOR PRECIO GT</H1>
 
     <div class="respuestas-columnas">
         <div class="grupo-respuestas">
@@ -295,65 +295,7 @@
                 
                 </div>
                 
-                    </div>
-                    <div id="agregar-respuesta" style="margin-top: 20px;">
-                        <h3>Agregar Nueva Respuesta</h3>
-                        <label for="titulo">Título de la sección:</label>
-                        <select id="titulo">
-                            <option value="pantallas">PANTALLAS DE 70 Y 75"</option>
-                            <option value="microondas">MICROONDAS</option>
-                            <option value="herramientas">HERRAMIENTAS Y OTROS</option>
-                            <option value="electrodomesticos">PALLETS DE ELECTRODOMÉSTICOS</option>
-                            <option value="abanicos">ABANICOS AÉREOS PREMIUM</option>
-                        </select>
-                        <br><br>
-                        <label for="descripcion">Descripción:</label>
-                        <textarea id="descripcion" rows="4" cols="50" placeholder="Ingrese la descripción aquí..."></textarea>
-                        <br><br>
-                        <label for="precio">Precio:</label>
-                        <input type="text" id="precio" placeholder="Ingrese el precio aquí..." />
-                        <br><br>
-                        <label for="link">Enlace:</label>
-                        <input type="text" id="link" placeholder="Ingrese el enlace aquí..." />
-                        <br><br>
-                        <button onclick="agregarRespuesta()">Agregar Respuesta</button>
-                    </div>
-                    
-                    <script>
-                        function agregarRespuesta() {
-                            const titulo = document.getElementById('titulo').value;
-                            const descripcion = document.getElementById('descripcion').value;
-                            const precio = document.getElementById('precio').value;
-                            const link = document.getElementById('link').value;
-                    
-                            // Crear un nuevo bloque de respuesta
-                            const nuevoBloque = document.createElement('div');
-                            nuevoBloque.className = 'respuesta';
-                            
-                            const nuevoContenido = `
-                                <button class="boton-copiar" onclick="copiarTexto('${descripcion}')">Copiar</button>
-                                <p>${descripcion}</p>
-                                <p>Precio: Q${precio}<br>
-                                👉 <a href="${link}">${link}</a></p>
-                            `;
-                            
-                            nuevoBloque.innerHTML = nuevoContenido;
-                    
-                            // Agregar el nuevo bloque a la sección seleccionada
-                            const seccion = document.querySelector(`.titulo-grupo:contains('${titulo}')`).parentElement;
-                            if (seccion) {
-                                seccion.appendChild(nuevoBloque);
-                            } else {
-                                alert('Sección no encontrada.');
-                            }
-                            
-                            // Limpiar el formulario
-                            document.getElementById('descripcion').value = '';
-                            document.getElementById('precio').value = '';
-                            document.getElementById('link').value = '';
-                        }
-                    </script>
-        
+                  
         <script>
             function copiarTexto(texto) {
                 const elemento = document.createElement('textarea');
