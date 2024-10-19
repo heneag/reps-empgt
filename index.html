@@ -1,260 +1,365 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Respuestas Rápidas - EL MEJOR PRECIO GT</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #444;
-        }
-
-        .category {
-            margin: 20px 0;
-        }
-
-        .subcategory {
-            margin: 15px 0;
-            padding: 10px;
-            border-radius: 6px;
-            background: #e9ecef;
-        }
-
-        h2,
-        h3 {
-            color: #555;
-        }
-
-        .faq {
-            margin: 10px 0;
-            border-radius: 5px;
-            background: #ffffff;
-            padding: 15px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .faq-summary {
-            font-weight: bold;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-details {
-            display: none;
-            margin-top: 10px;
-        }
-
-        .expand-btn,
-        .copy-btn {
-            background: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .copy-btn {
-            background: #28a745;
-            margin-left: 10px;
-        }
-
-        .expand-btn:hover,
-        .copy-btn:hover {
-            opacity: 0.8;
-        }
-    </style>
+    <title>Copiar Texto</title>
 </head>
 
+
+
+
+
+<style>
+   <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 20px;
+        padding: 10px;
+        background-color: #f8f9fa;
+    }
+    .titulo-grupo {
+        color: #fff;
+        font-size: 1.5em;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #007bff;
+        border-radius: 5px;
+    }
+    .respuestas-columnas {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr); /* 6 columnas */
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .grupo-respuestas {
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+    }
+    .respuesta {
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        margin-bottom: 10px;
+        transition: background-color 0.3s;
+        display: flex;
+        flex-direction: column; /* Asegura que los elementos dentro se apilen verticalmente */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+    }
+    .respuesta:hover {
+        background-color: #e0e0e0;
+    }
+    .respuesta p {
+        margin: 5px 0; /* Añade un margen entre los párrafos */
+    }
+    .boton-copiar {
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px; /* Espacio arriba del botón */
+    }
+    .boton-copiar:hover {
+        background-color: #218838;
+    }
+</style>
+
+
+
 <body>
-    <div class="container">
-        <h1>Respuestas Rápidas - EL MEJOR PRECIO GT</h1>
-
-        <div class="category">
-            <h2>1. GENERALES</h2>
-
-            <div class="faq">
-                <button class="expand-btn" aria-expanded="false">+</button>
-                <div class="faq-summary">Hola, es un gusto atenderle.</div>
-                <div class="faq-details">
-                    <p>📋 Tenemos variedad de Pallets Completas y Mini Pallets de microondas, electrodomésticos y herramientas. Además tenemos pantallas por unidad y al por mayor.</p>
-                    <p>QUE BUSCAS EN ESPECIAL?</p>
-                    <p>PANTALLAS, PALLETS DE MICRONDAS, PALLETS EN GENERAL.</p>
-                    <p>Constantemente estamos actualizando nuestro inventario y catálogo. Puede verlo a detalle en el siguiente link:</p>
-                    <p><a href="https://wa.me/c/50237581098">https://wa.me/c/50237581098</a></p>
-                    <p>Consúltanos si buscas algo más o algo en específico.</p>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
-                </div>
+    <div class="respuestas-columnas">
+        <div class="grupo-respuestas">
+            <div class="titulo-grupo">GENERALES</div>
+            
+            <div class="respuesta">
+                <button class="boton-copiar" onclick="copiarTexto('Hola es un gusto atenderle.\nTenemos variedad de Pallets Completas y Mini Pallets de microondas, electrodomésticos y herramientas.\nAdemás, tenemos pantallas por unidad y al por mayor.\n¿Qué buscas en especial? ¿Pantallas, pallets de microondas, pallets en general?\nConstantemente estamos actualizando nuestro inventario y catálogo.\nPuede verlo a detalle en el siguiente link: https://wa.me/c/50237581098.\nConsúltanos si buscas algo más o algo en específico.')">Copiar</button>
+                <p>Hola es un gusto atenderle. Tenemos variedad de Pallets Completas y Mini Pallets de microondas, electrodomésticos y herramientas. Además, tenemos pantallas por unidad y al por mayor. ¿Qué buscas en especial? ¿Pantallas, pallets de microondas, pallets en general? Constantemente estamos actualizando nuestro inventario y catálogo. Puede verlo a detalle en el siguiente link: 👉 <a href="https://wa.me/c/50237581098">https://wa.me/c/50237581098</a>. Consúltanos si buscas algo más o algo en específico.</p>
             </div>
-
-            <div class="faq">
-                <button class="expand-btn" aria-expanded="false">+</button>
-                <div class="faq-summary">Nuestro horario es:</div>
-                <div class="faq-details">
-                    <p>⏰ Lunes a viernes: 9:00am - 5:00pm</p>
-                    <p>Sábados: 9:00am a 2:00pm</p>
-                    <p>📍 Estamos ubicados en Ciudad de Guatemala, 13 avenida 31-62 zona 13, Colonia Santa Fe, Bodega #6. <a href="https://bit.ly/3Y79FYM">https://bit.ly/3Y79FYM</a></p>
-                    <p>📲 Teléfono fijo: +502 2339-5303</p>
-                    <p>📲 WhatsApp: +502 3758-1098</p>
-                    <p>📧 Correo: gasare2024@hotmail.com</p>
-                    <p>🌐 Facebook: <a href="https://www.instagram.com/gasaregt">https://www.instagram.com/gasaregt</a></p>
-                    <p>🌐 Instagram: <a href="https://www.facebook.com/mejorpreciogta">https://www.facebook.com/mejorpreciogta</a></p>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
-                </div>
+            
+            <div class="respuesta">
+                <button class="boton-copiar" onclick="copiarTexto('Tenemos pantallas, pallets y minipallets.\nEstamos actualizando nuestro inventario y catálogo constantemente.\nPuede verlo a detalle en el siguiente link: https://wa.me/c/50237581098.\nConsúltanos si buscas algo más o algo en específico.')">Copiar</button>
+                <p>Tenemos pantallas, pallets y minipallets. Estamos actualizando nuestro inventario y catálogo constantemente. Puede verlo a detalle en el siguiente link: 👉 <a href="https://wa.me/c/50237581098">https://wa.me/c/50237581098</a>. Consúltanos si buscas algo más o algo en específico.</p>
             </div>
-
-            <div class="faq">
-                <button class="expand-btn" aria-expanded="false">+</button>
-                <div class="faq-summary">Nuestros precios son muy competitivos 💲.</div>
-                <div class="faq-details">
-                    <p>Estos productos son importados directamente de EE. UU. 🇺🇸. Están disponibles a precios tan bajos, a veces incluso por debajo de los precios de los distribuidores. Puedes probar las pantallas en nuestra bodega antes de comprarlas 🛍️, ya que son los únicos artículos que autorizamos abrir y probar antes de la venta 👀. Ten en cuenta que no cuentan con garantía después de la prueba y compra ❗️</p>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
-                </div>
+    
+            <div class="respuesta">
+                <button class="boton-copiar" onclick="copiarTexto('Nuestro horario es: Lunes a viernes: 9:00 am - 5:00 pm.\nSábados: 9:00 am a 2:00 pm.\nEstamos ubicados en Ciudad de Guatemala 13 avenida 31-62 zona 13 Colonia Santa Fe Bodega #6.\nhttps://bit.ly/3Y79FYM.\nTeléfono fijo: +502 2339-5303.\nWhatsApp: +502 3758-1098.\nCorreo: gasare2024@hotmail.com.\nFacebook: https://www.instagram.com/gasaregt.\nInstagram: https://www.facebook.com/mejorpreciogta.')">Copiar</button>
+                <p>Nuestro horario es: Lunes a viernes: 9:00 am - 5:00 pm. Sábados: 9:00 am a 2:00 pm. Estamos ubicados en Ciudad de Guatemala 13 avenida 31-62 zona 13 Colonia Santa Fe Bodega #6. <a href="https://bit.ly/3Y79FYM" target="_blank">https://bit.ly/3Y79FYM</a>. Teléfono fijo: +502 2339-5303. WhatsApp: +502 3758-1098. Correo: gasare2024@hotmail.com. Facebook: <a href="https://www.instagram.com/gasaregt" target="_blank">https://www.instagram.com/gasaregt</a>. Instagram: <a href="https://www.facebook.com/mejorpreciogta" target="_blank">https://www.facebook.com/mejorpreciogta</a>.</p>
             </div>
-
-            <div class="faq">
-                <button class="expand-btn" aria-expanded="false">+</button>
-                <div class="faq-summary">Si gusta, podemos abrirle un código para comprar como distribuidor al por mayor.</div>
-                <div class="faq-details">
-                    <p>Solo necesitaríamos los siguientes datos:</p>
-                    <ul>
-                        <li>Nombre Completo:</li>
-                        <li>Nombre de la Empresa:</li>
-                        <li>NIT / DPI:</li>
-                        <li>Teléfono:</li>
-                        <li>Correo:</li>
-                        <li>Dirección:</li>
-                    </ul>
-                    <p>(Puede comprar sin código también, pero con este código podrá tener mejor acceso a las promociones)</p>
-                    <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
-                </div>
+    
+            <div class="respuesta">
+                <button class="boton-copiar" onclick="copiarTexto('Nuestros precios son muy competitivos porque estos productos son importados directamente de EE. UU.\nEstán disponibles a precios tan bajos, a veces incluso por debajo de los precios de los distribuidores.\nPuedes probar las pantallas en nuestra bodega antes de comprarlas ya que son los únicos artículos que autorizamos abrir y probar antes de la venta.\nTen en cuenta que no cuentan con garantía después de la prueba y compra.')">Copiar</button>
+                <p>Nuestros precios son muy competitivos 💲 porque estos productos son importados directamente de EE. UU. 🇺🇸. Están disponibles a precios tan bajos, a veces incluso por debajo de los precios de los distribuidores. Puedes probar las pantallas en nuestra bodega antes de comprarlas 🛍️ ya que son los únicos artículos que autorizamos abrir y probar antes de la venta 👀. Ten en cuenta que no cuentan con garantía después de la prueba y compra ❗️</p>
             </div>
-        </div>
-
-        <div class="category">
-            <h2>2. PRODUCTOS</h2>
-
-            <div class="subcategory">
-                <h3>2.1 PANTALLAS</h3>
-
-                <div class="faq">
-                    <button class="expand-btn" aria-expanded="false">+</button>
-                    <div class="faq-summary">A continuación puedes ver nuestro catálogo con algunas de nuestras PANTALLAS DE 32" PULGADAS:</div>
-                    <div class="faq-details">
-                        <p>🌟 Pantallas de 32" Pulgadas 🌟</p>
-                        <p>VIZIO D-SERIES SMART TV 32" PULGADAS - Q999.00 <a href="https://wa.me/p/8392918634155937/50237581098">https://wa.me/p/8392918634155937/50237581098</a><br>
-                        WESTINGHOUSE ROKU TV 32" PULGADAS - Q999.00 <a href="https://wa.me/p/8044066529031172/50237581098">https://wa.me/p/8044066529031172/50237581098</a><br>
-                        PHILIPS ROKU TV 32" PULGADAS - Q999.00 <a href="https://wa.me/p/27565544636364166/50237581098">https://wa.me/p/27565544636364166/50237581098</a><br>
-                        MITSUBISHI 32" PULGADAS - Q999.00 <a href="https://wa.me/p/8392918634155937/50237581098">https://wa.me/p/8392918634155937/50237581098</a></p>
-                        <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
-                    </div>
-                </div>
-
-                <div class="faq">
-                    <button class="expand-btn" aria-expanded="false">+</button>
-                    <div class="faq-summary">A continuación puedes ver nuestro catálogo con algunas de nuestras PANTALLAS DE 40" PULGADAS:</div>
-                    <div class="faq-details">
-                        <p>🌟 Pantallas de 40" Pulgadas 🌟</p>
-                        <p>LG 40" SMART TV - Q999.00 <a href="https://wa.me/p/8392918634155937/50237581098">https://wa.me/p/8392918634155937/50237581098</a><br>
-                        SAMSUNG 40" SMART TV - Q999.00 <a href="https://wa.me/p/8044066529031172/50237581098">https://wa.me/p/8044066529031172/50237581098</a></p>
-                        <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
-                    </div>
-                </div>
-
-                <div class="faq">
-                    <button class="expand-btn" aria-expanded="false">+</button>
-                    <div class="faq-summary">A continuación puedes ver nuestro catálogo con algunas de nuestras PANTALLAS DE 50" PULGADAS:</div>
-                    <div class="faq-details">
-                        <p>🌟 Pantallas de 50" Pulgadas 🌟</p>
-                        <p>SAMSUNG 50" 4K UHD SMART TV - Q999.00 <a href="https://wa.me/p/8392918634155937/50237581098">https://wa.me/p/8392918634155937/50237581098</a><br>
-                        LG 50" UHD SMART TV - Q999.00 <a href="https://wa.me/p/8044066529031172/50237581098">https://wa.me/p/8044066529031172/50237581098</a></p>
-                        <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
-                    </div>
-                </div>
-
-                <div class="faq">
-                    <button class="expand-btn" aria-expanded="false">+</button>
-                    <div class="faq-summary">A continuación puedes ver nuestro catálogo con algunas de nuestras PANTALLAS DE 65" PULGADAS:</div>
-                    <div class="faq-details">
-                        <p>🌟 Pantallas de 65" Pulgadas 🌟</p>
-                        <p>LG 65" UHD 4K SMART TV - Q999.00 <a href="https://wa.me/p/8392918634155937/50237581098">https://wa.me/p/8392918634155937/50237581098</a><br>
-                        SAMSUNG 65" 4K UHD SMART TV - Q999.00 <a href="https://wa.me/p/8044066529031172/50237581098">https://wa.me/p/8044066529031172/50237581098</a></p>
-                        <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
-                    </div>
-                </div>
+    
+            <div class="respuesta">
+                <button class="boton-copiar" onclick="copiarTexto('Entiendo perfectamente su preocupación. Justamente el precio que ofrecemos es accesible porque la garantía es responsabilidad directa del distribuidor.\nDe esta manera podemos mantener costos bajos sin comprometer la calidad de los productos, lo que le brinda una excelente oportunidad de obtener márgenes de ganancia considerables por unidad para el distribuidor o revendedor.\nCreemos que esta es una opción muy favorable para su negocio ya que le permite maximizar su inversión sin asumir riesgos innecesarios.\nSi tiene más preguntas sobre esta opción, no dude en consultar.')">Copiar</button>
+                <p>Entiendo perfectamente su preocupación. Justamente el precio que ofrecemos es accesible porque la garantía es responsabilidad directa del distribuidor. De esta manera podemos mantener costos bajos sin comprometer la calidad de los productos, lo que le brinda una excelente oportunidad de obtener márgenes de ganancia considerables por unidad para el distribuidor o revendedor. Creemos que esta es una opción muy favorable para su negocio ya que le permite maximizar su inversión sin asumir riesgos innecesarios. Si tiene más preguntas sobre esta opción, no dude en consultar, aquí estamos para ayudarle 👨‍💼</p>
             </div>
-
-            <div class="subcategory">
-                <h3>2.2 MICROONDAS</h3>
-                <p>Microondas a precios competitivos disponibles al por mayor.</p>
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
-            </div>
-
-            <div class="subcategory">
-                <h3>2.3 MINIPALLETS</h3>
-                <p>Minipallets de electrodomésticos disponibles.</p>
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
-            </div>
-
-            <div class="subcategory">
-                <h3>2.4 PALLETS</h3>
-                <p>Pallets de herramientas y electrodomésticos disponibles.</p>
-                <button class="copy-btn" onclick="copyToClipboard(this)">Copiar</button>
-            </div>
-        </div>
     </div>
 
-    <script>
-        const expandButtons = document.querySelectorAll('.expand-btn');
+    <div class="respuestas-columnas">
+        <div class="grupo-respuestas">
+            <div class="titulo-grupo">PANTALLAS DE 32"</div>
+            <div class="respuesta">
+                <button class="boton-copiar" onclick="copiarTexto('A continuación puedes ver nuestro catálogo con algunas de nuestras PANTALLAS DE 32 PULGADAS:\n\nPantallas de 32 Pulgadas\nVIZIO D-SERIES SMART TV 32 PULGADAS - Q999.00 \n👉 https://wa.me/p/8392918634155937/50237581098\n\nWESTINGHOUSE ROKU TV 32 PULGADAS - Q999.00\n👉 https://wa.me/p/8044066529031172/50237581098\n\nPHILIPS ROKU TV 32 PULGADAS - Q999.00\n👉 https://wa.me/p/27565544636364166/50237581098')">Copiar</button>
+                <p>1-A continuación puedes ver nuestro catálogo con algunas de nuestras PANTALLAS DE 32" PULGADAS:</p>
+                <p>🌟 *Pantallas de 32" Pulgadas* 🌟</p>
+                <p>VIZIO D-SERIES SMART TV 32" PULGADAS - Q999.00<br>
+                👉 <a href="https://wa.me/p/8392918634155937/50237581098">https://wa.me/p/8392918634155937/50237581098</a></p>
+                <p>WESTINGHOUSE ROKU TV 32" PULGADAS - Q999.00<br>
+                👉 <a href="https://wa.me/p/8044066529031172/50237581098">https://wa.me/p/8044066529031172/50237581098</a></p>
+                <p>PHILIPS ROKU TV 32" PULGADAS - Q999.00<br>
+                👉 <a href="https://wa.me/p/27565544636364166/50237581098">https://wa.me/p/27565544636364166/50237581098</a></p>
+            </div>
+           
+    <div class="respuestas-columnas">
+        <div class="grupo-respuestas">
+            <div class="titulo-grupo">PANTALLAS DE 40" y 43"</div>
+            <div class="respuesta">
+                <button class="boton-copiar" onclick="copiarTexto('-A continuación puedes ver nuestro catálogo con algunas de nuestras PANTALLAS DE 40 y 43 PULGADAS:\n\nSAMSUNG 5 SERIES N5200 40 PULGADAS - Q1,550.00 \n👉 https://wa.me/p/27123491707265257/50237581098\n\nVIZIO D-SERIES SMART TV 40 PULGADAS - Q1,350.00 \n👉 https://wa.me/p/8519341848181179/50237581098\n\nLG 43UR9 43 PULGADAS - Q2,050.00 \n👉 https://wa.me/p/27177818988528375/50237581098\n\nTCL 43 PULGADAS - Q1,750.00 \n👉 https://wa.me/p/9044794385532287/50237581098\n\nWESTINGHOUSE ROKU TV 43 PULGADAS - Q1,450.00 \n👉 https://wa.me/p/8381903278574669/50237581098\n\nSAMSUNG CU7000D 43 PULGADAS - Q2,050.00 \n👉 https://wa.me/p/27494072060184171/50237581098')">Copiar</button>
+                <p>-A continuación puedes ver nuestro catálogo con algunas de nuestras PANTALLAS DE 40" y 43" PULGADAS:</p>
+                <p>SAMSUNG 5 SERIES N5200 40" PULGADAS - Q1,550.00<br>
+                👉 <a href="https://wa.me/p/27123491707265257/50237581098">https://wa.me/p/27123491707265257/50237581098</a></p>
+                <p>VIZIO D-SERIES SMART TV 40" PULGADAS - Q1,350.00<br>
+                👉 <a href="https://wa.me/p/8519341848181179/50237581098">https://wa.me/p/8519341848181179/50237581098</a></p>
+                <p>LG 43UR9 43" PULGADAS - Q2,050.00<br>
+                👉 <a href="https://wa.me/p/27177818988528375/50237581098">https://wa.me/p/27177818988528375/50237581098</a></p>
+                <p>TCL 43" PULGADAS - Q1,750.00<br>
+                👉 <a href="https://wa.me/p/9044794385532287/50237581098">https://wa.me/p/9044794385532287/50237581098</a></p>
+                <p>WESTINGHOUSE ROKU TV 43" PULGADAS - Q1,450.00<br>
+                👉 <a href="https://wa.me/p/8381903278574669/50237581098">https://wa.me/p/8381903278574669/50237581098</a></p>
+                <p>SAMSUNG CU7000D 43" PULGADAS - Q2,050.00<br>
+                👉 <a href="https://wa.me/p/27494072060184171/50237581098">https://wa.me/p/27494072060184171/50237581098</a></p>
+            </div>
+    
+    </div>
+    
+    <div class="grupo-respuestas">
+        <div class="titulo-grupo">PANTALLAS DE 50", 55" y 58"</div>
+        <div class="respuesta">
+            <button class="boton-copiar" onclick="copiarTexto('A continuación puedes ver nuestro catálogo con algunas de nuestras PANTALLAS DE 50, 55 y 58 PULGADAS:\n\nTCL 50 PULGADAS - Q2,150.00 \n👉 https://wa.me/p/8550013111753830/50237581098\n\nSAMSUNG CU7000D 50 PULGADAS - Q2,350.00 \n👉 https://wa.me/p/6763892017068174/50237581098\n\nPANTALLA LG 55QNED 55 PULGADAS - Q4,600.00 \n👉 https://wa.me/p/8235223156603025/50237581098\n\nLG 55UR80 55 PULGADAS - Q2,650.00 \n👉 https://wa.me/p/8429693757143449/50237581098\n\nSAMSUNG CRYSTAL UHD CU7000D 58 SMART TV - Q3,000.00 \n👉 https://wa.me/p/9081534938542189/50237581098\n\nVIZIO V-SERIES 58 SMART TV Q2350 - Q2,350.00 \n👉 https://wa.me/p/8899612756723733/50237581098')">Copiar</button>
+            <p>A continuación puedes ver nuestro catálogo con algunas de nuestras PANTALLAS DE 50", 55" y 58" PULGADAS:</p>
+            <p>TCL 50" PULGADAS - Q2,150.00<br>
+            👉 <a href="https://wa.me/p/8550013111753830/50237581098">https://wa.me/p/8550013111753830/50237581098</a></p>
+            <p>SAMSUNG CU7000D 50" PULGADAS - Q2,350.00<br>
+            👉 <a href="https://wa.me/p/6763892017068174/50237581098">https://wa.me/p/6763892017068174/50237581098</a></p>
+            <p>PANTALLA LG 55QNED 55" PULGADAS - Q4,600.00<br>
+            👉 <a href="https://wa.me/p/8235223156603025/50237581098">https://wa.me/p/8235223156603025/50237581098</a></p>
+            <p>LG 55UR80 55" PULGADAS - Q2,650.00<br>
+            👉 <a href="https://wa.me/p/8429693757143449/50237581098">https://wa.me/p/8429693757143449/50237581098</a></p>
+            <p>SAMSUNG CRYSTAL UHD CU7000D 58" SMART TV - Q3,000.00<br>
+            👉 <a href="https://wa.me/p/9081534938542189/50237581098">https://wa.me/p/9081534938542189/50237581098</a></p>
+            <p>VIZIO V-SERIES 58" SMART TV Q2350 - Q2,350.00<br>
+            👉 <a href="https://wa.me/p/8899612756723733/50237581098">https://wa.me/p/8899612756723733/50237581098</a></p>
+        
+           </div>
+        </div>
+        </div>   
+    </div>                     
+    <div class="respuestas-columnas">
+        <div class="grupo-respuestas">
+            <div class="titulo-grupo">PANTALLAS DE 65"</div>
+            <div class="respuesta">
+                <button class="boton-copiar" onclick="copiarTexto('A continuación puedes ver nuestro catálogo con algunas de nuestras PANTALLAS DE 65 PULGADAS:\n\nTCL MODEL 655470G SMART TV 65 PULGADAS - Q3,250.00\n👉 https://wa.me/p/8837323472965646/50237581098\n\nSAMSUNG NEO QLED QN85C SMART TV 65 PULGADAS - Q15,300.00\n👉 https://wa.me/p/8692733710784569/50237581098\n\nLG OLED EVO 65C3 SMART TV 65 PULGADAS - Q15,300.00\n👉 https://wa.me/p/8401651789902776/50237581098')">Copiar</button>
+                <p>A continuación puedes ver nuestro catálogo con algunas de nuestras PANTALLAS DE 65" PULGADAS:</p>
+                <p>TCL MODEL 655470G SMART TV 65" PULGADAS - Q3,250.00<br>
+                👉 <a href="https://wa.me/p/8837323472965646/50237581098">https://wa.me/p/8837323472965646/50237581098</a></p>
+                <p>SAMSUNG NEO QLED QN85C SMART TV 65" PULGADAS - Q15,300.00<br>
+                👉 <a href="https://wa.me/p/8692733710784569/50237581098">https://wa.me/p/8692733710784569/50237581098</a></p>
+                <p>LG OLED EVO 65C3 SMART TV 65" PULGADAS - Q15,300.00<br>
+                👉 <a href="https://wa.me/p/8401651789902776/50237581098">https://wa.me/p/8401651789902776/50237581098</a></p>
+            </div>
+            <div class="respuestas-columnas">
+                <div class="grupo-respuestas">
+                    <div class="titulo-grupo">PANTALLAS DE 70 Y 75"</div>
+                    <div class="respuesta">
+                        <button class="boton-copiar" onclick="copiarTexto('A continuación puedes ver nuestro catálogo con algunas de nuestras PANTALLAS DE 70 Y 75 PULGADAS:\n\nSAMSUNG QLED Q60C SMART TV 70 PULGADAS - Q7,350.00\n👉 https://wa.me/p/8691536004274083/50237581098\n\nSamsung QLED Q60C 70 Smart TV Q7350 (Openbox)\n👉 https://wa.me/p/8691536004274083/50237581098')">Copiar</button>
+                        <p>A continuación puedes ver nuestro catálogo con algunas de nuestras PANTALLAS DE 70 Y 75" PULGADAS:</p>
+                        <p>SAMSUNG QLED Q60C SMART TV 70" PULGADAS - Q7,350.00<br>
+                        👉 <a href="https://wa.me/p/8691536004274083/50237581098">https://wa.me/p/8691536004274083/50237581098</a></p>
+                        <p>Samsung QLED Q60C 70" Smart TV Q7350 (Openbox)<br>
+                        👉 <a href="https://wa.me/p/8691536004274083/50237581098">https://wa.me/p/8691536004274083/50237581098</a></p>
+            </div>
+    </div>
+</div>  </div>   
+<div class="respuestas-columnas">
+    <div class="grupo-respuestas">
+        <div class="titulo-grupo">MICROONDAS</div>
+        <div class="respuesta">
+            <button class="boton-copiar" onclick="copiarTexto('A continuación puedes ver las pallets de microondas disponibles:\n\n📦 Pallet de Microondas - C003-20 - Q5,500\n👉 https://wa.me/p/8511670172212795/50237581098\n\n📦 Pallet de Microondas - C003-19 - Q5,600\n👉 https://wa.me/p/8402754633177500/50237581098\n\n📦 Pallet de Microondas - C003-18 - Q5,100\n👉 https://wa.me/p/7781332408634559/50237581098\n\n📦 Pallet de Microondas - C003-16 - Q8,500\n👉 https://wa.me/p/8800230666665370/50237581098\n\n📦 Pallet de Microondas - C003-15 - Q5,915\n👉 https://wa.me/p/27077898498522312/50237581098\n\n📦 Pallet de Microondas - C003-16 - Q6,600\n👉 https://wa.me/p/8369018699856800/50237581098')">Copiar</button>
+            <p>A continuación puedes ver las pallets de microondas disponibles:</p>
+            <p>📦 Pallet de Microondas - C003-20 - Q5,500<br>
+            👉 <a href="https://wa.me/p/8511670172212795/50237581098">https://wa.me/p/8511670172212795/50237581098</a></p>
+            <p>📦 Pallet de Microondas - C003-19 - Q5,600<br>
+            👉 <a href="https://wa.me/p/8402754633177500/50237581098">https://wa.me/p/8402754633177500/50237581098</a></p>
+            <p>📦 Pallet de Microondas - C003-18 - Q5,100<br>
+            👉 <a href="https://wa.me/p/7781332408634559/50237581098">https://wa.me/p/7781332408634559/50237581098</a></p>
+            <p>📦 Pallet de Microondas - C003-16 - Q8,500<br>
+            👉 <a href="https://wa.me/p/8800230666665370/50237581098">https://wa.me/p/8800230666665370/50237581098</a></p>
+            <p>📦 Pallet de Microondas - C003-15 - Q5,915<br>
+            👉 <a href="https://wa.me/p/27077898498522312/50237581098">https://wa.me/p/27077898498522312/50237581098</a></p>
+            <p>📦 Pallet de Microondas - C003-16 - Q6,600<br>
+            👉 <a href="https://wa.me/p/8369018699856800/50237581098">https://wa.me/p/8369018699856800/50237581098</a></p>
+        </div>
+  
+            <div class="respuestas-columnas">
+                <div class="grupo-respuestas">
+                    <div class="titulo-grupo">HERRAMIENTAS Y OTROS</div>
+                    <div class="respuesta">
+                        <button class="boton-copiar" onclick="copiarTexto('A continuación puedes ver las pallets de herramientas y otros disponibles:\n\n📦 Pallet de Compresores Americanos Husky - C002-12 - Q10,400\n👉 https://wa.me/p/8446666252119017/50237581098\n\n📦 Pallet de Electrodomésticos Premium - C002-19 - Q15,450\n👉 https://wa.me/p/28031193326480009/50237581098\n\n📦 Pallet de Hidrolavadoras y Generadores Eléctricos - C003-12 - Q16,400\n👉 https://wa.me/p/8575763532504667/50237581098\n\n📦 Pallet de Generadores Eléctricos y Cortadoras de Césped - C003-11 - Q20,150\n👉 https://wa.me/p/8450385791714213/50237581098\n\n📦 Pallet de Cortadoras de Césped Americanas Craftsman - C002-16 - Q38,750\n👉 https://wa.me/p/8320877141355877/50237581098\n\n📦 Pallet de Cortadoras de Césped Americanas Craftsman - C002-15 - Q81,300\n👉 https://wa.me/p/8964776416880256/50237581098')">Copiar</button>
+                        <p>A continuación puedes ver las pallets de herramientas y otros disponibles:</p>
+                        <p>📦 Pallet de Compresores Americanos Husky - C002-12 - Q10,400<br>
+                        👉 <a href="https://wa.me/p/8446666252119017/50237581098">https://wa.me/p/8446666252119017/50237581098</a></p>
+                        <p>📦 Pallet de Electrodomésticos Premium - C002-19 - Q15,450<br>
+                        👉 <a href="https://wa.me/p/28031193326480009/50237581098">https://wa.me/p/28031193326480009/50237581098</a></p>
+                        <p>📦 Pallet de Hidrolavadoras y Generadores Eléctricos - C003-12 - Q16,400<br>
+                        👉 <a href="https://wa.me/p/8575763532504667/50237581098">https://wa.me/p/8575763532504667/50237581098</a></p>
+                        <p>📦 Pallet de Generadores Eléctricos y Cortadoras de Césped - C003-11 - Q20,150<br>
+                        👉 <a href="https://wa.me/p/8450385791714213/50237581098">https://wa.me/p/8450385791714213/50237581098</a></p>
+                        <p>📦 Pallet de Cortadoras de Césped Americanas Craftsman - C002-16 - Q38,750<br>
+                        👉 <a href="https://wa.me/p/8320877141355877/50237581098">https://wa.me/p/8320877141355877/50237581098</a></p>
+                        <p>📦 Pallet de Cortadoras de Césped Americanas Craftsman - C002-15 - Q81,300<br>
+                        👉 <a href="https://wa.me/p/8964776416880256/50237581098">https://wa.me/p/8964776416880256/50237581098</a></p>
+                    </div>
 
-        expandButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                const details = button.nextElementSibling;
-
-                if (details.style.display === 'block') {
-                    details.style.display = 'none';
-                    button.setAttribute('aria-expanded', 'false');
-                    button.textContent = '+';
-                } else {
-                    details.style.display = 'block';
-                    button.setAttribute('aria-expanded', 'true');
-                    button.textContent = '−';
-                }
-            });
-        });
-
-        function copyToClipboard(button) {
-            const text = button.previousElementSibling.innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Texto copiado al portapapeles: ' + text);
-            }).catch(err => {
-                alert('Error al copiar el texto: ' + err);
-            });
-        }
-    </script>
-</body>
-
-</html>
+    </div>        </div>  </div>            
+    <div class="respuestas-columnas">
+        <div class="grupo-respuestas">
+            <div class="titulo-grupo">PALLETS DE ELECTRODOMÉSTICOS</div>
+            <div class="respuesta">
+                <button class="boton-copiar" onclick="copiarTexto('A continuación puedes ver las pallets de electrodomésticos premium disponibles:\n\n📦 Pallet de Electrodomésticos Premium - C001-08 - Q16,200\n👉 https://wa.me/p/8864217943623162/50237581098\n\n📦 Pallet de Electrodomésticos Premium - C002-03 - Q16,700\n👉 https://wa.me/p/8427080883993634/50237581098\n\n📦 Pallet de Electrodomésticos Premium - C002-07 - Q19,200\n👉 https://wa.me/p/8433216000130353/50237581098\n\n📦 Pallet de Electrodomésticos Premium - C002-01 - Q19,500\n👉 https://wa.me/p/8361182983949651/50237581098\n\n📦 Pallet de Electrodomésticos Premium - C002-02 - Q20,000\n👉 https://wa.me/p/8661305337225596/50237581098\n\n📦 Pallet de Electrodomésticos Premium - C001-13 - Q20,500\n👉 https://wa.me/p/8685452598185097/50237581098\n\n📦 Pallet de Electrodomésticos Premium - C001-17 - Q21,500\n👉 https://wa.me/p/8394083277378101/50237581098\n\n📦 Pallet de Electrodomésticos Premium - C001-20 - Q22,650\n👉 https://wa.me/p/8652111134856062/50237581098\n\n📦 Pallet de Electrodomésticos Premium - C001-19 - Q24,250\n👉 https://wa.me/p/8613602195373026/50237581098\n\n📦 Pallet de Electrodomésticos Premium - C001-18 - Q24,750\n👉 https://wa.me/p/9220721667960342/50237581098\n\n📦 Pallet de Electrodomésticos Premium - C001-16 - Q24,900\n👉 https://wa.me/p/27097001349948588/50237581098')">Copiar</button>
+                <p>A continuación puedes ver las pallets de electrodomésticos premium disponibles:</p>
+                <p>📦 Pallet de Electrodomésticos Premium - C001-08 - Q16,200<br>
+                👉 <a href="https://wa.me/p/8864217943623162/50237581098">https://wa.me/p/8864217943623162/50237581098</a></p>
+                <p>📦 Pallet de Electrodomésticos Premium - C002-03 - Q16,700<br>
+                👉 <a href="https://wa.me/p/8427080883993634/50237581098">https://wa.me/p/8427080883993634/50237581098</a></p>
+                <p>📦 Pallet de Electrodomésticos Premium - C002-07 - Q19,200<br>
+                👉 <a href="https://wa.me/p/8433216000130353/50237581098">https://wa.me/p/8433216000130353/50237581098</a></p>
+                <p>📦 Pallet de Electrodomésticos Premium - C002-01 - Q19,500<br>
+                👉 <a href="https://wa.me/p/8361182983949651/50237581098">https://wa.me/p/8361182983949651/50237581098</a></p>
+                <p>📦 Pallet de Electrodomésticos Premium - C002-02 - Q20,000<br>
+                👉 <a href="https://wa.me/p/8661305337225596/50237581098">https://wa.me/p/8661305337225596/50237581098</a></p>
+                <p>📦 Pallet de Electrodomésticos Premium - C001-13 - Q20,500<br>
+                👉 <a href="https://wa.me/p/8685452598185097/50237581098">https://wa.me/p/8685452598185097/50237581098</a></p>
+                <p>📦 Pallet de Electrodomésticos Premium - C001-17 - Q21,500<br>
+                👉 <a href="https://wa.me/p/8394083277378101/50237581098">https://wa.me/p/8394083277378101/50237581098</a></p>
+                <p>📦 Pallet de Electrodomésticos Premium - C001-20 - Q22,650<br>
+                👉 <a href="https://wa.me/p/8652111134856062/50237581098">https://wa.me/p/8652111134856062/50237581098</a></p>
+                <p>📦 Pallet de Electrodomésticos Premium - C001-19 - Q24,250<br>
+                👉 <a href="https://wa.me/p/8613602195373026/50237581098">https://wa.me/p/8613602195373026/50237581098</a></p>
+                <p>📦 Pallet de Electrodomésticos Premium - C001-18 - Q24,750<br>
+                👉 <a href="https://wa.me/p/9220721667960342/50237581098">https://wa.me/p/9220721667960342/50237581098</a></p>
+                <p>📦 Pallet de Electrodomésticos Premium - C001-16 - Q24,900<br>
+                👉 <a href="https://wa.me/p/27097001349948588/50237581098">https://wa.me/p/27097001349948588/50237581098</a></p>
+           </div>
+  
+ </div> 
+                        <div class="respuestas-columnas">
+                            <div class="grupo-respuestas">
+                                <div class="titulo-grupo">ABANICOS AÉREOS PREMIUM</div>
+                                <div class="respuesta">
+                                    <button class="boton-copiar" onclick="copiarTexto('A continuación puedes ver las pallets de abanicos aéreos premium disponibles:\n\n📦 Pallet de Abanicos Aéreos Premium - C001-02 - Q27,900\n👉 https://wa.me/p/8890491920961469/50237581098\n\n📦 Pallet de Abanicos Aéreos Premium - C001-05 - Q33,900\n👉 https://wa.me/p/8758670410839064/50237581098\n\n📦 Pallet de Abanicos Aéreos Premium - C001-03 - Q42,200\n👉 https://wa.me/p/8776539645743248/50237581098\n\n📦 Pallet de Abanicos Aéreos Premium - C001-01 - Q42,850\n👉 https://wa.me/p/7877491702350894/50237581098\n\n📦 Pallet de Abanicos Aéreos Premium - C001-04 - Q46,700\n👉 https://wa.me/p/6727095057414358/50237581098')">Copiar</button>
+                                    <p>A continuación puedes ver las pallets de abanicos aéreos premium disponibles:</p>
+                                    <p>📦 Pallet de Abanicos Aéreos Premium - C001-02 - Q27,900<br>
+                                    👉 <a href="https://wa.me/p/8890491920961469/50237581098">https://wa.me/p/8890491920961469/50237581098</a></p>
+                                    <p>📦 Pallet de Abanicos Aéreos Premium - C001-05 - Q33,900<br>
+                                    👉 <a href="https://wa.me/p/8758670410839064/50237581098">https://wa.me/p/8758670410839064/50237581098</a></p>
+                                    <p>📦 Pallet de Abanicos Aéreos Premium - C001-03 - Q42,200<br>
+                                    👉 <a href="https://wa.me/p/8776539645743248/50237581098">https://wa.me/p/8776539645743248/50237581098</a></p>
+                                    <p>📦 Pallet de Abanicos Aéreos Premium - C001-01 - Q42,850<br>
+                                    👉 <a href="https://wa.me/p/7877491702350894/50237581098">https://wa.me/p/7877491702350894/50237581098</a></p>
+                                    <p>📦 Pallet de Abanicos Aéreos Premium - C001-04 - Q46,700<br>
+                                    👉 <a href="https://wa.me/p/6727095057414358/50237581098">https://wa.me/p/6727095057414358/50237581098</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            
+                </div>
+                
+                        
+                </div>
+                
+                </div>
+                
+                    </div>
+                    <div id="agregar-respuesta" style="margin-top: 20px;">
+                        <h3>Agregar Nueva Respuesta</h3>
+                        <label for="titulo">Título de la sección:</label>
+                        <select id="titulo">
+                            <option value="pantallas">PANTALLAS DE 70 Y 75"</option>
+                            <option value="microondas">MICROONDAS</option>
+                            <option value="herramientas">HERRAMIENTAS Y OTROS</option>
+                            <option value="electrodomesticos">PALLETS DE ELECTRODOMÉSTICOS</option>
+                            <option value="abanicos">ABANICOS AÉREOS PREMIUM</option>
+                        </select>
+                        <br><br>
+                        <label for="descripcion">Descripción:</label>
+                        <textarea id="descripcion" rows="4" cols="50" placeholder="Ingrese la descripción aquí..."></textarea>
+                        <br><br>
+                        <label for="precio">Precio:</label>
+                        <input type="text" id="precio" placeholder="Ingrese el precio aquí..." />
+                        <br><br>
+                        <label for="link">Enlace:</label>
+                        <input type="text" id="link" placeholder="Ingrese el enlace aquí..." />
+                        <br><br>
+                        <button onclick="agregarRespuesta()">Agregar Respuesta</button>
+                    </div>
+                    
+                    <script>
+                        function agregarRespuesta() {
+                            const titulo = document.getElementById('titulo').value;
+                            const descripcion = document.getElementById('descripcion').value;
+                            const precio = document.getElementById('precio').value;
+                            const link = document.getElementById('link').value;
+                    
+                            // Crear un nuevo bloque de respuesta
+                            const nuevoBloque = document.createElement('div');
+                            nuevoBloque.className = 'respuesta';
+                            
+                            const nuevoContenido = `
+                                <button class="boton-copiar" onclick="copiarTexto('${descripcion}')">Copiar</button>
+                                <p>${descripcion}</p>
+                                <p>Precio: Q${precio}<br>
+                                👉 <a href="${link}">${link}</a></p>
+                            `;
+                            
+                            nuevoBloque.innerHTML = nuevoContenido;
+                    
+                            // Agregar el nuevo bloque a la sección seleccionada
+                            const seccion = document.querySelector(`.titulo-grupo:contains('${titulo}')`).parentElement;
+                            if (seccion) {
+                                seccion.appendChild(nuevoBloque);
+                            } else {
+                                alert('Sección no encontrada.');
+                            }
+                            
+                            // Limpiar el formulario
+                            document.getElementById('descripcion').value = '';
+                            document.getElementById('precio').value = '';
+                            document.getElementById('link').value = '';
+                        }
+                    </script>
+        
+        <script>
+            function copiarTexto(texto) {
+                const elemento = document.createElement('textarea');
+                elemento.value = texto;
+                document.body.appendChild(elemento);
+                elemento.select();
+                document.execCommand('copy');
+                document.body.removeChild(elemento);
+                alert('Texto copiado al portapapeles');
+            }
+        </script>
